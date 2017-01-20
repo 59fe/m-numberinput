@@ -60,7 +60,7 @@ export default class NumberInput extends React.Component{
 
   render() {
 
-    let { skin } = this.props
+    let { skin, placeholder } = this.props
     let { value, focus, disabled } = this.state
     let fieldClassNames = []
 
@@ -75,7 +75,7 @@ export default class NumberInput extends React.Component{
         id={this.inputFieldId}
         data-number-input-index={this.inputFieldIndex}
         className={fieldClassNames.join(' ')}
-      >{this.state.value}</div>
+      >{this.state.value.length ? this.state.value : <span className="react-number-input-placeholder">{placeholder}</span>}</div>
     )
 
   }
@@ -92,7 +92,7 @@ export default class NumberInput extends React.Component{
 
     let { value } = this.state
     let { matchReg, maxLength } = this.props
-    let validation = true
+    let applyChange = true
 
     if (newValue !== 'delete') {  
       value += newValue
@@ -101,20 +101,19 @@ export default class NumberInput extends React.Component{
     }
 
     if (!isNaN(maxLength) && value.length > maxLength) {
-      validation = false
+      applyChange = false
       value = this.state.value
     }
 
-    if (Object.prototype.toString.call(matchReg) === "[object RegExp]" && !matchReg.test(value)) {
-      validation = false
-      value = this.state.value
+    if (Object.prototype.toString.call(matchReg) === "[object RegExp]" && matchReg.test(this.state.value)) {
+      applyChange = false
     }
-
+ 
     if (typeof this.props.onChange === 'function') {
-      validation = this.props.onChange(value, newValue)
+      applyChange = this.props.onChange(value, newValue)
     }
 
-    (validation !== false || newValue === 'delete') && this.setState({ value })
+    (applyChange !== false || newValue === 'delete') && this.setState({ value })
 
   }
 

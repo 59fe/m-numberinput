@@ -35,7 +35,7 @@ export default class Keyboard extends React.Component{
     }
 
     return (
-      <div style={{ height }} className={keyboardClassName}>
+      <div data-number-input-index={inputFieldIndex} style={{ height }} className={keyboardClassName}>
         <button data-number-input-index={inputFieldIndex} onClick={::this.handleInput} data-value="1">1</button>
         <button data-number-input-index={inputFieldIndex} onClick={::this.handleInput} data-value="2">2</button>
         <button data-number-input-index={inputFieldIndex} onClick={::this.handleInput} data-value="3">3</button>

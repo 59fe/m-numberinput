@@ -10,7 +10,8 @@ class Demo extends React.Component {
       <div className="demo">
         <NumberInput 
           skin="numer-field"
-          symbol="."
+          placeholder="哈哈哈"
+          maxLength="11"
           keyboard={{
             skin: 'bar',
             height: '40%'
