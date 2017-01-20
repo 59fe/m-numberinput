@@ -38,7 +38,7 @@
   border-top: 1px solid #c0c3c6;
   border-right: 1px solid #c0c3c6;
   outline: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: #c7cbd1;
   -webkit-touch-callout: none
 }
 .number-input-keyboard button:active{
