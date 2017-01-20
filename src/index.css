@@ -2,22 +2,45 @@
   display: block;
   position: relative;
   height: 40px;
+  padding: 0 10px;
   overflow: hidden;
   color: #666;
   font-size: 24px;
   line-height: 40px;
   border: 1px solid #ccc;
 }
-.react-number-input.focus::after{
+.react-number-input.focus{
+  border-color: #999;
+}
+.react-number-input.disabled{
+  opacity: .5;
+  pointer-events: none;
+}
+.react-number-input .react-number-input-value-item{
+  display: block;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+}
+.react-number-input .react-number-input-cursor{
+  position: relative;
+  display: none;
+  float: left;
+  height: 100%;
+  animation: cursor linear infinite 1s
+}
+.react-number-input .react-number-input-cursor::before{
   position: absolute;
   top: 50%;
-  display: inline-block;
+  left: 0;
   width: 2px;
   height: 1em;
-  background-color: #666;
+  background-color: #06f;
   content: '';
-  transform: translate(0, -50%);
-  animation: cursor linear infinite 1s
+  transform: translate3d(0, -50%, 0);
+}
+.react-number-input.focus .react-number-input-cursor{
+  display: block;
 }
 .react-number-input-placeholder{
   position: absolute;

@@ -7,7 +7,7 @@
 if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
   var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),
     version = parseInt(v[1], 10);
-  if (version >= 8) {
+  if (version >= 8 && window.devicePixelRatio === 2) {
     document.documentElement.classList.add('hairlines')
   }
 }
@@ -36,6 +36,6 @@ html,body{
 </style>
 </head>
 <body ontouchstart>
-<div id="root" onclick="javascript:console.log(1);"></div>
+<div id="root" onclick="javascript:;"></div>
 </body>
 </html>
