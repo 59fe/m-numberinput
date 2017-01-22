@@ -60,19 +60,9 @@ export default class Keyboard extends React.Component{
         <button data-number-input-index={inputFieldIndex} onTouchStart={::this.handleInput} data-value="7">7</button>
         <button data-number-input-index={inputFieldIndex} onTouchStart={::this.handleInput} data-value="8">8</button>
         <button data-number-input-index={inputFieldIndex} onTouchStart={::this.handleInput} data-value="9">9</button>
-        <button
-          data-number-input-index={inputFieldIndex}
-          onTouchStart={::this.handleInput}
-          className={symbolButtonClassName}
-          data-value={symbol}
-        >{symbol}</button>
+        <button data-number-input-index={inputFieldIndex} onTouchStart={::this.handleInput} className={symbolButtonClassName} data-value={symbol}>{symbol}</button>
         <button data-number-input-index={inputFieldIndex} onTouchStart={::this.handleInput} data-value="0">0</button>
-        <button
-          data-number-input-index={inputFieldIndex}
-          onTouchStart={::this.handleDeleteStart}
-          onTouchEnd={::this.handleDeleteEnd}
-          data-value="delete"
-        ></button>
+        <button data-number-input-index={inputFieldIndex} onTouchStart={::this.handleDeleteStart} onTouchEnd={::this.handleDeleteEnd} data-value="delete"></button>
       </div>
     )
 

@@ -12,6 +12,7 @@ class Demo extends React.Component {
           skin="numer-field"
           placeholder="哈哈哈"
           type="id"
+          onMatch={::this.handleMatch}
           keyboard={{
             skin: 'bar',
             height: '40%'
