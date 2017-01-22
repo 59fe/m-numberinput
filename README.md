@@ -3,7 +3,9 @@ React 移动端数字输入框组件
 
 
 ### 安装
-`npm install react-number-input-mobile --save`
+```
+npm install react-number-input-mobile --save
+```
 
 ### 使用
 ```javascript
