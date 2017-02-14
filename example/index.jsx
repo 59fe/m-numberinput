@@ -4,12 +4,27 @@ import NumberInput from '../src'
 
 class Demo extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: 111
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        value: 333
+      })
+    }, 3000)
+  }
+
   render() {
 
     return (
       <div className="demo">
         <NumberInput 
-          defaultValue={11123}
+          defaultValue={this.state.value}
           skin="numer-field"
           placeholder="哈哈哈"
           type="id"

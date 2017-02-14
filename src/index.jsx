@@ -50,6 +50,16 @@ export default class NumberInput extends React.Component{
 
   }
 
+  componentWillReceiveProps(props) {
+
+    if (props.defaultValue !== this.props.defaultValue) {
+      this.setState({
+        value: props.defaultValue ? props.defaultValue.toString() : ''
+      })
+    }
+
+  }
+
   componentDidMount() {
 
     // 注册事件监听器
