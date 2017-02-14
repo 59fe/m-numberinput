@@ -9,6 +9,7 @@ class Demo extends React.Component {
     return (
       <div className="demo">
         <NumberInput 
+          defaultValue={11123}
           skin="numer-field"
           placeholder="哈哈哈"
           type="id"

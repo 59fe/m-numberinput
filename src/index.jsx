@@ -10,7 +10,7 @@ export default class NumberInput extends React.Component{
 
     super(props)
     this.state = {
-      value: props.defaultValue || '',
+      value: props.defaultValue ? props.defaultValue.toString() : '',
       focus: false,
       disabled: false,
       matched: false,
@@ -26,7 +26,7 @@ export default class NumberInput extends React.Component{
 
   componentWillMount() {
 
-    // 支持同一个页面存在多个输入框，使用底层的序列来避免冲突
+    // 支持同一个页面存在多个输入框，使用递增的序号来避免冲突
     if (typeof window.__REACT_NUMBER_INPUT_INDEX__ === 'undefined') {
       window.__REACT_NUMBER_INPUT_INDEX__ = 0
     } else {
@@ -126,8 +126,6 @@ export default class NumberInput extends React.Component{
     let matched = false
 
     if (newValue !== 'delete') { //非删除操作
-
-      
 
       value = this.valueAfterInsert(newValue)
       cursorPosition !== null && (cursorPosition = cursorPosition + 1)
