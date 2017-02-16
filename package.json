@@ -1,6 +1,6 @@
 {
   "name": "react-number-input-mobile",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React数字输入框组件",
   "main": "dist/index.js",
   "scripts": {

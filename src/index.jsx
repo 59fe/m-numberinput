@@ -17,6 +17,7 @@ export default class NumberInput extends React.Component{
       cursorPosition: null
     }
 
+    this.mounted = false
     this.timer = null
     this.inputFieldIndex = 0
     this.keyboard = null
@@ -62,6 +63,8 @@ export default class NumberInput extends React.Component{
 
   componentDidMount() {
 
+    this.mounted = true
+
     // 注册事件监听器
     document.body.addEventListener('click', this.handleFocusOrBlur.bind(this), false)
 
@@ -73,6 +76,8 @@ export default class NumberInput extends React.Component{
   }
 
   componentWillUnmount() {
+
+    this.mounted = false
 
     // 文本框组件卸载之前，调用handleBlur来隐藏键盘组件
     this.handleBlur()
@@ -213,6 +218,10 @@ export default class NumberInput extends React.Component{
     // 由于某些移动端浏览器的缺陷，不能借用原生的表单控件来让本组件支持blur和focus，
     // 所以采用通过事件代理的方式来判断当前元素是否需要获得或者失去焦点，模拟blur和focus
 
+    if (!this.mounted ) {
+      return
+    }
+
     // 获取当前点击对象的numberInputIndex或者valueIndex
     let numberInputIndex = e.target.dataset['numberInputIndex']
     let valueIndex = e.target.dataset.valueIndex
@@ -312,7 +321,7 @@ export default class NumberInput extends React.Component{
 
     // 通过组件实例方法来清空值
     this.setState({ value: '' })
-  
+
   }
 
   disable() {
