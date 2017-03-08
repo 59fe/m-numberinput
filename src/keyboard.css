@@ -3,7 +3,7 @@
   visibility: hidden;
   z-index: 999999;
   right: -1px;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   height: 50%;
   background-color: #fff;
@@ -27,7 +27,6 @@
   float: left;
   width: 33.333333%;
   height: 25%;
-  margin-top: 1px;
   padding: 0;
   overflow: hidden;
   color: #606366;
@@ -35,8 +34,8 @@
   text-align: center;
   background-color: #fff;
   border: none;
-  border-top: 1px solid #c0c3c6;
   border-right: 1px solid #c0c3c6;
+  border-bottom: 1px solid #c0c3c6;
   outline: none;
   -webkit-tap-highlight-color: #c7cbd1;
   -webkit-touch-callout: none

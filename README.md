@@ -53,15 +53,14 @@ open http://localhost:5998
 | id | String | 会作为id属性附加到输入框组件的DOM元素上，如果页面需要多处使用此组件，请勿传相同的值 |
 | placeholder| String | 输入框为空时的占位文字 |
 | showCursor| Boolean | 是否显示光标，默认true |
-| type| String | 输入框类型，目前支持传入'id'(身份证号码)和'number'(普通数字) |
-| symbol| String | 指定键盘组件左下角按钮对应的输入字符，当指定type属性为'id'或者'number'时，symbol强制为'X'或者'.' |
+| type| String | 输入框类型，目前支持传入'id'(身份证号码)和'number'(普通数字)，或者不传 |
+| symbol| String | 指定键盘组件左下角按钮对应的输入字符，当指定type属性为'id'或者'number'时，symbol强制为'X'或者'.'，为null时，不显示任何符号 |
 | decimal| Integer | 小数点后的位数限制 |
 | maxLength| Integer | 输入的最大位数限制 |
 | max| Number | 输入的最大数值限制 |
-| matchReg| RegExp | 传入一个正则表达式 |
-| onChange| function | 当用户输入有效值时候的回调方法，在该回调中return false可以阻止用户输入|
-| onMatch| function | 当输入框的值与matchReg匹配时调用|
-| onNotMatch| function | 当输入框的值与matchReg不匹配时调用|
+| onChange| function | 当用户输入有效值时候的回调方法，参数为输入值，在该回调中return false可以阻止用户输入|
+| blur | function | 让组件失去焦点 |
+| focus | function | 让组件获得焦点 |
 | keyboard| Object | 可以简单自定义该输入框组件对应的键盘组件|
 | keyboard.skin| String| 会作为class属性附加到键盘组件的DOM元素上，可用于自定义键盘组件的样式 |
-| keyboard.height | String | 传入一个有效的CSS高度以指定键盘组件的高度|
+| keyboard.height | String | 传入一个有效的CSS高度以指定键盘组件的高度 |

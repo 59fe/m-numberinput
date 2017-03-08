@@ -303,6 +303,18 @@ export default class NumberInput extends React.Component{
 
   }
 
+  focus() {
+
+    this.handleFocus()
+
+  }
+
+  blur() {
+
+    this.handleBlur()
+
+  }
+
   getValue() {
 
     // 通过组件实例方法来获取当前的值
@@ -362,7 +374,8 @@ export default class NumberInput extends React.Component{
     if (cursorPosition === null) {
       return value.slice(0, -1)
     } else {
-      return valueArray.splice(cursorPosition, 1).join('')
+      valueArray.splice(cursorPosition, 1)
+      return valueArray.join('')
     }
 
   }

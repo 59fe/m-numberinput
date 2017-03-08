@@ -12,7 +12,7 @@ export default class Keyboard extends React.Component{
       show: false,
       skin: null,
       symbol: '.',
-      height: '50%',
+      height: window.__NUMBER_INPUT_KEYBOARD_HEIGHT__ || '50%',
       onKeyDown: null
     }
 
