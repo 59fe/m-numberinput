@@ -97,7 +97,7 @@ export default class NumberInput extends React.Component{
     let fieldClassNames = []
 
     // 是否显示或者隐藏输入框光标
-    let cursor = showCursor !== false ? <span className="react-number-input-cursor"></span> : null
+    let cursor = showCursor !== false ? <i className="react-number-input-cursor"></i> : null
 
     // 指定skin参数，则将其添加到组件样式名
     skin && fieldClassNames.push(skin)
