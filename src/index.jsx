@@ -247,7 +247,7 @@ export default class NumberInput extends React.Component{
           cursorPosition: valueIndex - 1
         })
 
-      } else {
+      } else if (e.target.tagName.toLowerCase() !== 'button') {
 
         // 如果没有获取到，则将光标移到最后
         this.setState({
