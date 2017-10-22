@@ -42,12 +42,15 @@ export default class NumberInput extends React.Component{
 
       let keyboardHolder = document.createElement('div')
       document.body.appendChild(keyboardHolder)
-      window.__REACT_NUMBER_KEYBOARD__ = ReactDOM.render(<Keyboard />, keyboardHolder)
 
-    }
+      ReactDOM.render(<Keyboard ref={instance => {
+        window.__REACT_NUMBER_KEYBOARD__ = instance
+        this.keyboard = instance
+      }}/>, keyboardHolder)
 
-    // 得到键盘组件实例对象
-    this.keyboard = window.__REACT_NUMBER_KEYBOARD__
+    } else {
+      this.keyboard = window.__REACT_NUMBER_KEYBOARD__
+    }    
 
   }
 
